@@ -1,0 +1,53 @@
+{
+  "pt_br": {
+    "description": "Olá, me chamo Kailan, tenho 16 anos e uma grande afinidade com programação e desenvolvimento web. Sou movido pela criatividade e pela paixão por criar, sempre buscando transformar ideias em realidade. Acredito que não há nada mais recompensador do que dedicar esforço a uma criação e, ao final, poder apreciá-la como fruto de trabalho e dedicação. Meu objetivo é continuar evoluindo, expandindo meus conhecimentos e deixando minha marca por meio das minhas realizações.",
+    "pj1_title": "Sites",
+    "pj1_description": "Meus projetos pessoais e profissionais de desenvolvimento web",
+    "pj2_title": "Soundtracks",
+    "pj2_description": "Trilhas sonoras incríveis com vários estilos diferenciados.",
+    "pj3_title": "Mods/Addons para Minecraft",
+    "pj3_description": "Complementos que são programados para melhorar a experiência do jogo. Sou praticamente afiliado da Mojang/Microsoft.",
+    "pj4_title": "Programas Nativos",
+    "pj4_description": "Não tenho nada sobre isso para mostrar.",
+    "contact": "Contato",
+    "discord": "Discord: @blayy",
+    "email": "Email: blayy.dev@gmail.com",
+    "projectNotFound": "Projeto não encontrado.",
+    "back": "Voltar",
+    "relatedProjects": "Projetos Relacionados"
+  },
+  "en_us": {
+    "description": "Hello, my name is Kailan, I am 16 years old, and I have a strong affinity for programming and web development. I am driven by creativity and a passion for creating, always seeking to transform ideas into reality. I believe there is nothing more rewarding than dedicating effort to a creation and, in the end, being able to appreciate it as the result of hard work and dedication. My goal is to continue evolving, expanding my knowledge, and leaving my mark through my achievements.",
+    "pj1_title": "Websites",
+    "pj1_description": "My personal and professional web development projects",
+    "pj2_title": "Soundtracks",
+    "pj2_description": "Amazing soundtracks with various unique styles.",
+    "pj3_title": "Minecraft Mods/Addons",
+    "pj3_description": "Add-ons that are programmed to enhance the game experience. I am practically affiliated with Mojang/Microsoft.",
+    "pj4_title": "Native Programs",
+    "pj4_description": "I don't have anything to show for this yet.",
+    "contact": "Contact",
+    "discord": "Discord: @blayy",
+    "email": "Email: blayy.dev@gmail.com",
+    "projectNotFound": "Project not found.",
+    "back": "Back",
+    "relatedProjects": "Related Projects"
+  },
+  "es_mx": {
+    "description": "Hola, me llamo Kailan, tengo 16 años y tengo una gran afinidad con la programación y el desarrollo web. Estoy impulsado por la creatividad y la pasión por crear, siempre buscando transformar ideas en realidad. Creo que no hay nada más gratificante que dedicar esfuerzo a una creación y, al final, poder apreciarla como el fruto del trabajo y la dedicación. Mi objetivo es seguir evolucionando, expandiendo mis conocimientos y dejando mi huella a través de mis logros.",
+    "pj1_title": "Sitios Web",
+    "pj1_description": "Mis proyectos personales y profesionales de desarrollo web",
+    "pj2_title": "Bandas Sonoras",
+    "pj2_description": "Bandas sonoras increíbles con varios estilos únicos.",
+    "pj3_title": "Mods/Addons para Minecraft",
+    "pj3_description": "Complementos que están programados para mejorar la experiencia del juego. Estoy prácticamente afiliado a Mojang/Microsoft.",
+    "pj4_title": "Programas Nativos",
+    "pj4_description": "No tengo nada que mostrar para esto todavía.",
+    "contact": "Contacto",
+    "discord": "Discord: @blayy",
+    "email": "Email: blayy.dev@gmail.com",
+    "projectNotFound": "Proyecto no encontrado.",
+    "back": "Volver",
+    "relatedProjects": "Proyectos Relacionados"
+  }
+}

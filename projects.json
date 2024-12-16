@@ -1,0 +1,32 @@
+[
+  {
+    "id": "sites",
+    "title": "Sites",
+    "description": "Descrição do Projeto 1",
+    "relatedProjects": [
+      {
+        "title": "r1-pj1-title",
+        "description": "r1-pj1-description"
+      },
+      {
+        "title": "r2-pj1-title",
+        "description": "r2-pj1-description"
+      }
+    ]
+  },
+  {
+    "id": "project2",
+    "title": "Projeto 2",
+    "description": "Descrição do Projeto 2",
+    "relatedProjects": [
+      {
+        "title": "Subprojeto A",
+        "description": "Descrição do Subprojeto A"
+      },
+      {
+        "title": "Subprojeto B",
+        "description": "Descrição do Subprojeto B"
+      }
+    ]
+  }
+]
