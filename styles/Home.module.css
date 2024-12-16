@@ -125,7 +125,6 @@
   align-items: center;
   text-align: center;
   color: #b889e4;
-  text-shadow: 2px 2px 60px #a600ff;
   opacity: 0; 
   transform: translateY(20px); 
   animation: slideUp 0.5s ease-out forwards;
