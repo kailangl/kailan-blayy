@@ -15,7 +15,7 @@ const Home: NextPage = () => {
   const [language, setLanguage] = useState("pt_br");
 
   useEffect(() => {
-    // Carregar o tema e idioma salvos no localStorage
+    // Carregar o tema e idioma salvos no localStorageaaa
     const savedTheme = localStorage.getItem("theme");
     const savedLanguage = localStorage.getItem("language");
 
