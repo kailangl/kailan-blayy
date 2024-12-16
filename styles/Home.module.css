@@ -128,7 +128,7 @@
   text-shadow: 2px 2px 60px #a600ff;
   opacity: 0; 
   transform: translateY(20px); 
-  animation: slideUp 1.5s ease-out forwards;
+  animation: slideUp 0.5s ease-out forwards;
 }
 
 @keyframes slideUp {
@@ -301,4 +301,81 @@
 .startd {
   display: flex;
   
+}
+.vsfdcaralho {
+  display: flex;
+  margin-top: 20px;
+  max-width: 50%;
+  max-height: 50%;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+.imgicon {
+  text-align: center;
+ font-weight: bold;
+  margin-top: -4px;
+  margin-left: 10px;
+  width: 64px;
+  height: 64px;
+  cursor: pointer;
+
+  /* Filtro inicial (cor original) */
+  filter: hue-rotate(0deg);
+
+  /* Suavidade para hover e transições */
+  transition: transform 0.3s ease, filter 0.3s ease;
+
+  /* Animação constante */
+  animation: pulse 2s infinite, changeColor 4s infinite; /* Animação de cor */
+}
+
+/* Efeito ao passar o mouse */
+.imgicon:hover {
+  transform: scale(1.1); /* Aumenta ligeiramente */
+  filter: hue-rotate(0deg); /* Mantém a cor original */
+  border-radius: 12px; /* Adiciona bordas levemente arredondadas */
+}
+
+/* Efeito ao clicar */
+.imgicon:active {
+  transform: scale(0.95); /* Encolhe ligeiramente */
+  filter: hue-rotate(0deg); /* Mantém a cor original */
+}
+
+/* Animação de pulso */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    filter: hue-rotate(0deg); /* Cor original */
+  }
+  50% {
+    transform: scale(1.05);
+    filter: hue-rotate(180deg); /* 180 graus de rotação (primeira cor) */
+  }
+  100% {
+    transform: scale(1);
+    filter: hue-rotate(360deg); /* Volta para a cor original (360 graus) */
+  }
+}
+
+/* Animação de mudança de cor (imagem e borda) */
+@keyframes changeColor {
+  0% {
+    filter: hue-rotate(0deg); /* Cor original */
+  }
+  33% {
+    filter: hue-rotate(60deg); /* Primeira cor */
+  }
+  66% {
+    filter: hue-rotate(180deg); /* Segunda cor */
+  }
+  100% {
+    filter: hue-rotate(0deg); /* Retorna para a cor original */
+  }
+}
+
+.texticon {
+ text-rendering: auto;
+
 }

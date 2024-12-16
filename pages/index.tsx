@@ -97,30 +97,30 @@ const Home: NextPage = () => {
           </button>
         </div>
 
-        <h1 className={styles.title}>- Blayy Developer -</h1>
+        <h1 className={styles.title}>- BlayyDev -</h1>
 
         <p className={styles.description}>{currentLang.description}</p>
 
         <div className={styles.grid}>
-          <Link href="/project/sites" passHref className={styles.rUnder}>
+          <Link href="/project/sites" className={styles.rUnder}>
             <div className={styles.card}>
               <h2>{currentLang.pj1_title} &rarr;</h2>
               <p>{currentLang.pj1_description}</p>
             </div>
           </Link>
-          <Link href="/project/soundtracks" passHref className={styles.rUnder}>
+          <Link href="/project/soundtracks" className={styles.rUnder}>
             <div className={styles.card}>
               <h2>{currentLang.pj2_title} &rarr;</h2>
               <p>{currentLang.pj2_description}</p>
             </div>
           </Link>
-          <Link href="/project/mods" passHref className={styles.rUnder}>
+          <Link href="/project/mods" className={styles.rUnder}>
             <div className={styles.card}>
               <h2>{currentLang.pj3_title} &rarr;</h2>
               <p>{currentLang.pj3_description}</p>
             </div>
           </Link>
-          <Link href="/project/native" passHref className={styles.rUnder}>
+          <Link href="/project/native" className={styles.rUnder}>
             <div className={styles.card}>
               <h2>{currentLang.pj4_title} &rarr;</h2>
               <p>{currentLang.pj4_description}</p>
@@ -132,6 +132,54 @@ const Home: NextPage = () => {
           <h1 className={styles.title}>{currentLang.contact}</h1>
           <p className={styles.code}>{currentLang.discord}</p>
           <p className={styles.code}>{currentLang.email}</p>
+        </div>
+        <h1 className={styles.title}>Links</h1>
+        <div className={styles.vsfdcaralho}>
+
+          <Link href="https://discord.com/users/481534167893540874">
+            <Image
+              alt="Imagem Botão"
+              src="/discord.png"
+              width={64}
+              height={64}
+              className={styles.imgicon}
+            />
+             <p className={styles.imgicon}>Discord</p>     
+          </Link>
+          
+          <Link href="https://github.com/kailangl">
+            <Image
+              alt="Imagem Botão"
+              src="/github.png"
+              width={64}
+              height={64}
+              className={styles.imgicon}
+              
+            />
+                <p className={styles.imgicon}>Github</p> 
+          </Link>
+          <Link href="https://x.com/blayyrandom?t=i-zxvy5HMCmP63p8hMc9KQ&s=33">
+            <Image
+              alt="Imagem Botão"
+              src="/x.png"
+              width={64}
+              height={64}
+              className={styles.imgicon}
+            />
+                <p className={styles.imgicon}>X</p> 
+          </Link>
+        
+          <Link href="https://www.instagram.com/kailan.gl/profilecard/?igsh=MXRwMWh0a2I2OWFidQ==">
+            <Image
+              alt="Imagem Botão"
+              src="/instagram.png"
+              width={64}
+              height={64}
+              className={styles.imgicon}
+            />
+                <p className={styles.imgicon}>Instagram</p> 
+          </Link>
+          
         </div>
       </main>
     </div>
