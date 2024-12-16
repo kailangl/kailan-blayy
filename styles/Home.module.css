@@ -320,58 +320,55 @@
   height: 64px;
   cursor: pointer;
 
-  /* Filtro inicial (cor original) */
   filter: hue-rotate(0deg);
 
-  /* Suavidade para hover e transições */
+  
   transition: transform 0.3s ease, filter 0.3s ease;
 
-  /* Animação constante */
-  animation: pulse 2s infinite, changeColor 4s infinite; /* Animação de cor */
+ 
+  animation: pulse 2s infinite, changeColor 4s infinite;
 }
 
-/* Efeito ao passar o mouse */
+
 .imgicon:hover {
-  transform: scale(1.1); /* Aumenta ligeiramente */
-  filter: hue-rotate(0deg); /* Mantém a cor original */
-  border-radius: 12px; /* Adiciona bordas levemente arredondadas */
+  transform: scale(1.1); 
+  filter: hue-rotate(0deg); 
+  border-radius: 12px; 
 }
 
-/* Efeito ao clicar */
 .imgicon:active {
-  transform: scale(0.95); /* Encolhe ligeiramente */
-  filter: hue-rotate(0deg); /* Mantém a cor original */
+  transform: scale(0.95); 
+  filter: hue-rotate(0deg); 
 }
 
-/* Animação de pulso */
+
 @keyframes pulse {
   0% {
     transform: scale(1);
-    filter: hue-rotate(0deg); /* Cor original */
+    filter: hue-rotate(0deg); 
   }
   50% {
     transform: scale(1.05);
-    filter: hue-rotate(180deg); /* 180 graus de rotação (primeira cor) */
+    filter: hue-rotate(180deg);
   }
   100% {
     transform: scale(1);
-    filter: hue-rotate(360deg); /* Volta para a cor original (360 graus) */
+    filter: hue-rotate(360deg);
   }
 }
 
-/* Animação de mudança de cor (imagem e borda) */
 @keyframes changeColor {
   0% {
-    filter: hue-rotate(0deg); /* Cor original */
+    filter: hue-rotate(0deg); 
   }
   33% {
-    filter: hue-rotate(60deg); /* Primeira cor */
+    filter: hue-rotate(60deg); 
   }
   66% {
-    filter: hue-rotate(180deg); /* Segunda cor */
+    filter: hue-rotate(180deg); 
   }
   100% {
-    filter: hue-rotate(0deg); /* Retorna para a cor original */
+    filter: hue-rotate(0deg); 
   }
 }
 
