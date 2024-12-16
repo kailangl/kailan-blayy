@@ -72,6 +72,7 @@
 
 
 .title {
+  max-width: 100%;
   display: inline-block;
   margin: 0;
   line-height: 1.15;
@@ -120,6 +121,7 @@
 }
 
 .description {
+  max-width: 70%;
   margin: 2rem 0;
   line-height: 1.5;
   font-size: 1.5rem;
@@ -281,7 +283,7 @@
   border: 4px solid #bcbcbc;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
-  width: 600px;
+  width: 50%;
   text-shadow: 4px 4px 0px #0002;
 }
 .contact2 {
@@ -293,7 +295,7 @@
   border: 4px solid #bcbcbc;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
-  width: 600px;
+  max-width: 600px;
   text-shadow: 4px 4px 0px #85858522;
 }
 .startd {
