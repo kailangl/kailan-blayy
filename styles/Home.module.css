@@ -375,3 +375,44 @@
  text-rendering: auto;
 
 }
+
+.container_m {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  background-color: #f4f4f400;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.card_m {
+  width: 300px;
+  text-align: center;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.iframe {
+  border: none;
+}
+
+.cardContent {
+  padding: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+.link {
+  color: #ff5500;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.linkSecondary {
+  color: #666;
+  text-decoration: none;
+}
