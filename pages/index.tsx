@@ -63,7 +63,7 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Kailan Gonçalo - Blayy Dev</title>
+        <title>Kailan Gonçalves - Blayy Dev</title>
         <meta name="description" content="my portifolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
