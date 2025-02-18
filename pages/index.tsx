@@ -89,10 +89,10 @@ const Home: NextPage = () => {
             }}
           >
             <Image
-              src={img} // Caminho da sua imagem
+              src={img} 
               alt="Imagem Botão"
-              width={32} // Largura da imagem
-              height={32} // Altura da imagem
+              width={32} 
+              height={32} 
             />
           </button>
         </div>

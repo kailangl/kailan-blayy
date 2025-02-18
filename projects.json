@@ -1,10 +1,14 @@
 [
   {
     "id": "soundtracks",
-    "title": "Sites",
-    "description": "Descrição do Projeto 1",
+    "type": "pj1",
+    "title": "Soundtracks",
+    "description": "pj2_description",
     "relatedProjects": [
-      
+      {
+        "title": "Subprojeto A",
+        "description": "Descrição do Subprojeto A"
+      }
     ]
   },
   {
