@@ -62,6 +62,7 @@ const Home: NextPage = () => {
 
   return (
     <div className={styles.container}>
+    
       <Head>
         <title>Kailan Gonçalves - Blayy Dev</title>
         <meta name="description" content="my portifolio" />
@@ -69,6 +70,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={bg}>
+   
         <div className={styles.startd}>
           <select
             className={bg4}
@@ -181,7 +183,9 @@ const Home: NextPage = () => {
           </Link>
           
         </div>
+       
       </main>
+   
     </div>
   );
 };

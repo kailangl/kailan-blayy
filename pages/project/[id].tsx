@@ -32,23 +32,23 @@ const ProjectPage = () => {
   const router = useRouter();
   const { id } = router.query;
 
-  // Estados para idioma e tema
+  
   const [theme, setTheme] = useState("light");
   const [language, setLanguage] = useState("pt_br");
 
   useEffect(() => {
-    // Carregar configurações do localStorage
+   
     const savedTheme = localStorage.getItem("theme");
     const savedLanguage = localStorage.getItem("language");
     if (savedTheme) setTheme(savedTheme);
     if (savedLanguage) setLanguage(savedLanguage);
   }, []);
 
-  // Determina os estilos com base no tema
+
   const bg = theme === "dark" ? styles.maind : styles.main;
   const bgButton = theme === "dark" ? styles.buttond : styles.button;
 
-  // Encontra o projeto pelo ID
+  
   const project = projects.find((proj) => proj.id === id);
 
   const currentLang = lang[language];
@@ -65,19 +65,26 @@ const ProjectPage = () => {
       </div>
     );
   }
-
+ const idc = project.type
   return (
     
     <div className={styles.container}>
-      
+    
       <main className={bg}>
-        
+        <h1 className={styles.title}>{project.title}</h1>
+        <p className={styles.description}>{currentLang[project.description]}</p>
+      <Link href="/">
+    <button className={bgButton}>{currentLang.back}</button>
+  </Link>
        {id == "soundtracks" ? (
         <div>
-           <h1 className={styles.title}>- {currentLang.pj2_title} &rarr;</h1>
-           <p className={styles.description}>{currentLang.pj2_description}</p>
- <div className={styles.container_m}>
+     
  
+  
+
+
+ <div className={styles.container_m}>
+
  {tracks.map((track, index) => (
    <div key={index} className={styles.card}>
      <iframe
@@ -114,13 +121,11 @@ const ProjectPage = () => {
  </div>
 </div>
 ) : ( 
-  <h1>nao tem arrombado</h1>
+  <h1>nao tem, arrombado</h1>
   )}
         
 
-        <Link href="/">
-          <button className={bgButton}>{currentLang.back}</button>
-        </Link>
+       
       </main>
     </div>
   );
