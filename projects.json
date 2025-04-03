@@ -12,9 +12,9 @@
     ]
   },
   {
-    "id": "project2",
-    "title": "Projeto 2",
-    "description": "Descrição do Projeto 2",
+    "id": "sites",
+    "title": "Sites",
+    "description": "pj1_description",
     "relatedProjects": [
       {
         "title": "Subprojeto A",

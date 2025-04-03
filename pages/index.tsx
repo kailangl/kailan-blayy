@@ -5,6 +5,7 @@ import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import lang from "../lang.json";
 import Image from "next/image";
+import { Gavel, FileAudio, Webhook, Bot } from "lucide-react";
 
 const Home: NextPage = () => {
   const [bg, setBg] = useState(styles.main);
@@ -106,25 +107,26 @@ const Home: NextPage = () => {
         <div className={styles.grid}>
           <Link href="/project/sites" className={styles.rUnder}>
             <div className={styles.card}>
-              <h2>{currentLang.pj1_title} &rarr;</h2>
+              <h2><Webhook /> {currentLang.pj1_title} &rarr;</h2>
               <p>{currentLang.pj1_description}</p>
             </div>
           </Link>
           <Link href="/project/soundtracks" className={styles.rUnder}>
             <div className={styles.card}>
-              <h2>{currentLang.pj2_title} &rarr;</h2>
+              <h2>< FileAudio /> {currentLang.pj2_title} &rarr;</h2>
               <p>{currentLang.pj2_description}</p>
             </div>
           </Link>
           <Link href="/project/mods" className={styles.rUnder}>
             <div className={styles.card}>
-              <h2>{currentLang.pj3_title} &rarr;</h2>
+          
+              <h2>  <Gavel /> {currentLang.pj3_title} &rarr;</h2>
               <p>{currentLang.pj3_description}</p>
             </div>
           </Link>
-          <Link href="/project/native" className={styles.rUnder}>
+          <Link href="/project/bots" className={styles.rUnder}>
             <div className={styles.card}>
-              <h2>{currentLang.pj4_title} &rarr;</h2>
+              <h2><Bot /> {currentLang.pj4_title} &rarr;</h2>
               <p>{currentLang.pj4_description}</p>
             </div>
           </Link>
