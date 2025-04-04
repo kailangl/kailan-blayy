@@ -82,6 +82,7 @@ const Home: NextPage = () => {
             <option value="en_us">English</option>
             <option value="es_mx">Español</option>
           </select>
+      
           <button
             onClick={toggleBackground}
             style={{

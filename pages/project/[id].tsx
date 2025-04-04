@@ -5,14 +5,7 @@ import styles from "../../styles/Home.module.css";
 import lang from "../../lang.json";
 import projects from "../../projects.json";
 
-const sites = [
-  {
-  src: "rock-mine.vercel.app",
-  title: "Rock Mine Website",
-  img: "https://wallpaperaccess.com/full/284553.jpg",
-  contributors: ["BlayyDev;https://github.com/kailangl", "Matt;https://github.com/minecodebr"]
-  }
-]
+
 const tracks = [
   {
     src: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1942645151&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
@@ -60,7 +53,15 @@ const ProjectPage = () => {
   const project = projects.find((proj) => proj.id === id);
 
   const currentLang = lang[language];
-
+  const sites = [
+    {
+    src: "https://rock-mine.vercel.app",
+    title: "Rock Mine Website",
+    img: "/rockminesite.png",
+    description: lang[language].pj1_list_desc[0],
+    contributors: ["BlayyDev;https://github.com/kailangl", "Matt;https://github.com/minecodebr"]
+    }
+  ]
   if (!project) {
     return (
       <div className={styles.container}>
@@ -130,37 +131,42 @@ const ProjectPage = () => {
  </div>
 </div>
 ) : id == "sites" ? ( 
-  <div className={styles.container_m}>
+  <div>
 
  {sites.map((site, index) => (
-   <div key={index} className={styles.card}>
    
-     <img    width="100%"
-       height="200"  src={site.img}></img>
-     <div className={styles.cardContent}>
-       
-       
-       <a
-         href={site.src}
-         title={site.title}
-         target="_blank"
-         rel="noopener noreferrer"
-         className={styles.linkSecondary}
-       >
-         {site.title}
-         <br></br>
-       </a>
-       
-       {site.contributors.map((cont, index) => (
-       
- <span key={index}>
-          <a href={cont.split(";")[1]}>{cont.split(";")[0]}, </a>
-        </span>
-       
-       
-       ))}
-     </div>
-   </div>
+    <div key={index} className={styles.grid}>
+      
+      <div className={`${styles.card_site} `}>
+      <div className={styles.siteImageContainer}>
+        <img
+          src={site.img}
+          alt={site.title}
+          width='100%'
+          height='100%'
+          className={styles.siteImage}
+        />
+      </div>
+      <h6><a href={site.src} target="_blank" rel="noopener" className={`${styles.title}  ${styles.rUnder}`}>Rock Mine Website</a></h6> 
+     <button className={bgButton} onClick={() => window.open(site.src, "_blank")}>&rarr; {site.src}</button>
+        <p>{site.description}</p>
+      
+        <div className={styles.contributors}>
+          <span><strong>{currentLang.contributors}: </strong></span>
+          {site.contributors.map((contributor, i) => (
+            <span key={i}>
+            <button 
+  className={bgButton}
+  onClick={() => window.open(contributor.split(";")[1], "_blank")}
+>
+  {contributor.split(";")[0]}
+</button>
+              {i < site.contributors.length - 1 ? ", " : ""}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
    
  ))}
  </div>
