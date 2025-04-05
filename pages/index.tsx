@@ -16,7 +16,7 @@ const Home: NextPage = () => {
   const [language, setLanguage] = useState("pt_br");
 
   useEffect(() => {
-    // Carregar o tema e idioma salvos no localStorageaaaA
+   
     const savedTheme = localStorage.getItem("theme");
     const savedLanguage = localStorage.getItem("language");
 
@@ -36,14 +36,14 @@ const Home: NextPage = () => {
   const toggleBackground = () => {
     const isDarkMode = bg === styles.main;
 
-    // Atualizar o estado do tema
+   
     setBg(isDarkMode ? styles.maind : styles.main);
     setBg3(isDarkMode ? styles.buttond : styles.button);
     setBg4(isDarkMode ? styles.button2d : styles.button2);
     setBg2(isDarkMode ? styles.contact2 : styles.contact);
     setImg(isDarkMode ? "/darkon.png" : "/darkoff.png");
 
-    // Salvar no localStorage
+   
     localStorage.setItem("theme", isDarkMode ? "dark" : "light");
   };
 
@@ -53,7 +53,7 @@ const Home: NextPage = () => {
     const newLanguage = event.target.value;
     setLanguage(newLanguage);
 
-    // Salvar no localStorage
+    
     localStorage.setItem("language", newLanguage);
   };
   const handleClick2 = () => {
@@ -68,10 +68,11 @@ const Home: NextPage = () => {
         <title>Kailan Gonçalves - Blayy Dev</title>
         <meta name="description" content="my portifolio" />
         <link rel="icon" href="/favicon.ico" />
+      
       </Head>
 
       <main className={bg}>
-   
+  
         <div className={styles.startd}>
           <select
             className={bg4}
@@ -149,7 +150,7 @@ const Home: NextPage = () => {
               height={64}
               className={styles.imgicon}
             />
-             <p className={styles.imgicon}>Discord</p>     
+              
           </Link>
           
           <Link href="https://github.com/kailangl">
@@ -161,7 +162,7 @@ const Home: NextPage = () => {
               className={styles.imgicon}
               
             />
-                <p className={styles.imgicon}>Github</p> 
+                
           </Link>
           <Link href="https://x.com/blayyrandom?t=i-zxvy5HMCmP63p8hMc9KQ&s=33">
             <Image
@@ -171,7 +172,7 @@ const Home: NextPage = () => {
               height={64}
               className={styles.imgicon}
             />
-                <p className={styles.imgicon}>X</p> 
+               
           </Link>
         
           <Link href="https://www.instagram.com/kailan.gl/profilecard/?igsh=MXRwMWh0a2I2OWFidQ==">
@@ -182,7 +183,7 @@ const Home: NextPage = () => {
               height={64}
               className={styles.imgicon}
             />
-                <p className={styles.imgicon}>Instagram</p> 
+               
           </Link>
           
         </div>
