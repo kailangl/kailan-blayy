@@ -652,5 +652,47 @@ text-color: #aebdfe;
   animation: cardFadeIn 1s ease-out, cardScale 3s ease-in-out infinite;
 }
 
+.techGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+
+  margin-top: 32px;
+}
+
+.techItem {
+  background: linear-gradient(270deg, #aebdfe, #b889e4, #aebdfe);
+  background-size: 400% 400%;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 1rem;
+  
+  transition: background 0.2s;
+  animation: gradientMove 3s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.techItem:hover {
+  background-color: rgba(0, 0, 0, 0.5); 
+  color: #222; 
+  border: 2px solid #222;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 
 

@@ -5,6 +5,7 @@ import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import lang from "../lang.json";
 import Image from "next/image";
+import { SiTypescript, SiNextdotjs, SiNodedotjs, SiReact, SiVite, SiElectron, SiDart, SiFlutter, SiJavascript, SiGit, SiGithub, SiTailwindcss, SiHtml5, SiCss3 } from "react-icons/si";
 import { Gavel, FileAudio, Webhook, Bot } from "lucide-react";
 
 const Home: NextPage = () => {
@@ -134,11 +135,24 @@ const Home: NextPage = () => {
           </Link>
         </div>
 
-        <div className={bg2}>
-          <h1 className={styles.title}>{currentLang.contact}</h1>
-          <p className={styles.code}>{currentLang.discord}</p>
-          <p className={styles.code}>{currentLang.email}</p>
-        </div>
+
+          <h1 className={styles.title}>Tecnologias</h1>
+    <div className={styles.techGrid}>
+  <span className={styles.techItem}><SiTypescript size={14} /> TypeScript</span>
+  <span className={styles.techItem}><SiNextdotjs size={14} /> Next.js</span>
+  <span className={styles.techItem}><SiNodedotjs size={14} /> Node.js</span>
+  <span className={styles.techItem}><SiReact size={14} /> React</span>
+  <span className={styles.techItem}><SiVite size={14} /> Vite</span>
+  <span className={styles.techItem}><SiElectron size={14} /> Electron</span>
+  <span className={styles.techItem}><SiDart size={14} /> Dart</span>
+  <span className={styles.techItem}><SiFlutter size={14} /> Flutter</span>
+  <span className={styles.techItem}><SiJavascript size={14} /> JavaScript</span>
+  <span className={styles.techItem}><SiGit size={14} /> Git</span>
+  <span className={styles.techItem}><SiGithub size={14} /> GitHub</span>
+  <span className={styles.techItem}><SiTailwindcss size={14} /> Tailwind</span>
+  <span className={styles.techItem}><SiHtml5 size={14} /> HTML</span>
+  <span className={styles.techItem}><SiCss3 size={14} /> CSS</span>
+</div>
         <h1 className={styles.title}>Links</h1>
         <div className={styles.vsfdcaralho}>
 
