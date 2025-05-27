@@ -4,7 +4,7 @@ import Link from "next/link";
 import styles from "../../styles/Home.module.css";
 import lang from "../../lang.json";
 import projects from "../../projects.json";
-
+import HeadBar from "../../components/HeadBar";
 
 const tracks = [
   {
@@ -32,11 +32,14 @@ const tracks = [
 const ProjectPage = () => {
   const router = useRouter();
   const { id } = router.query;
-
-  
+ 
+   
   const [theme, setTheme] = useState("light");
   const [language, setLanguage] = useState("pt_br");
-
+const handleLanguageChange = (newLang: string) => {
+    setLanguage(newLang);
+    localStorage.setItem("language", newLang);
+  };
   useEffect(() => {
    
     const savedTheme = localStorage.getItem("theme");
@@ -75,10 +78,32 @@ const ProjectPage = () => {
     );
   }
  const idc = project.type
+  const toggleTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
+    document.documentElement.setAttribute("data-theme", newTheme);
+    
+    const [bg, setBg] = useState(styles.main);
+  const [bg2, setBg2] = useState(styles.contact);
+  const [bg3, setBg3] = useState(styles.button);
+  const [bg4, setBg4] = useState(styles.button2);
+  const [img, setImg] = useState("/darkoff.png");
+    setBg(newTheme === "dark" ? styles.maind : styles.main);
+    setBg3(newTheme === "dark" ? styles.buttond : styles.button);
+    setBg4(newTheme === "dark" ? styles.button2d : styles.button2);
+    setBg2(newTheme === "dark" ? styles.contact2 : styles.contact);
+    setImg(newTheme === "dark" ? "/darkon.png" : "/darkoff.png");
+  };
   return (
     
     <div className={styles.container}>
-    
+      <HeadBar 
+        theme={theme}
+        language={language}
+        onThemeChange={toggleTheme}
+        onLanguageChange={handleLanguageChange}
+      />
       <main className={bg}>
         <h1 className={styles.title}>{project.title}</h1>
         <p className={styles.description}>{currentLang[project.description]}</p>
