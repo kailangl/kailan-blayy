@@ -37,13 +37,11 @@ const HeadBar = ({
   const [activeSection, setActiveSection] = useState("home");
   const router = useRouter();
 
-  // Atualiza a seção ativa quando a rota muda
   useEffect(() => {
     const path = router.asPath.split('/')[1] || 'home';
     setActiveSection(path);
   }, [router.asPath]);
 
-  // Efeito para detectar scroll apenas na página inicial
   useEffect(() => {
     if (router.pathname !== '/') return;
 
@@ -89,9 +87,6 @@ const HeadBar = ({
 
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ""}`}>
-      <div className={styles.logoContainer}>
-        {/* Seu logo aqui */}
-      </div>
 
       <button 
         className={styles.menuButton}
@@ -105,40 +100,38 @@ const HeadBar = ({
         )}
       </button>
 
-      <nav className={`${styles.nav} ${isMenuOpen ? styles.open : ""}`}>
-        <div className={styles.languageSelector}>
-          <select
-            value={language}
-            onChange={handleLanguageChange}
-            className={styles.select}
-            aria-label="Selecionar idioma"
-          >
-            {Object.entries(languageOptions).map(([code, {flag, label}]) => (
-              <option key={code} value={code}>
-                {flag} {label}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <button
-          onClick={toggleTheme}
-          className={styles.themeButton}
-          aria-label="Alternar tema"
-          data-theme={theme}
+      <div className={styles.languageSelector} style={{ display: 'flex' }}>
+        <select
+          value={language}
+          onChange={handleLanguageChange}
+          className={styles.select}
+          aria-label="Selecionar idioma"
+          style={{ padding: '0.2rem 1rem 0.2rem 0.5rem', minWidth: 'auto', appearance: 'auto' }}
         >
-          <div className={styles.themeToggle}>
-            {theme === "dark" ? (
-              <FiMoon className={styles.themeIcon} />
-            ) : (
-              <FiSun className={styles.themeIcon} />
-            )}
-            <span className={styles.themeText}>
-              {theme === "dark" ? "Modo Escuro" : "Modo Claro"}
-            </span>
-          </div>
-        </button>
+          {Object.entries(languageOptions).map(([code, {flag, label}]) => (
+            <option key={code} value={code}>
+              {flag} {label}
+            </option>
+          ))}
+        </select>
+      </div>
 
+      <button
+        onClick={toggleTheme}
+        className={styles.themeButton}
+        aria-label="Alternar tema"
+        data-theme={theme}
+      >
+        <div className={styles.themeToggle} style={{ margin: 0 }}>
+          {theme === "dark" ? (
+            <FiMoon className={styles.themeIcon} />
+          ) : (
+            <FiSun className={styles.themeIcon} />
+          )}
+        </div>
+      </button>
+
+      <nav className={`${styles.nav} ${isMenuOpen ? styles.open : ""}`}>
         <div className={styles.navLinks}>
           {navItems.map((item) => (
             <Link 

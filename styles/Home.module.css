@@ -112,7 +112,7 @@
   display: inline-block;
   margin: 0;
   line-height: 1.15;
-  font-size: 4rem;
+  font-size: clamp(2.5rem, 8vw, 4rem);
   color: var(--text-secondary);
   position: relative;
   cursor: pointer;
@@ -144,9 +144,9 @@
 
 .description {
   margin: 2rem 0;
-  line-height: 1;
-  max-width: 70%;
-  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 90%;
+  font-size: clamp(1rem, 3vw, 1.2rem);
   text-align: center;
   color: var(--accent-purple);
   opacity: 0;
@@ -296,7 +296,7 @@
 
 /* Navigation & Header elements */
 .nav { display: flex; align-items: center; gap: 1.5rem; }
-.navLinks { display: flex; gap: 1.5rem; justify-content: center; }
+.navLinks { display: flex; gap: 1.5rem; justify-content: center; width: 100%; }
 
 .navLink {
   color: var(--nav-link-color);
@@ -414,23 +414,95 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .menuButton {
-    display: flex;
+  .header {
+    padding: 0.5rem 1rem;
+    justify-content: space-between;
+    bottom: 0;
+    top: auto;
+    border-top: 1px solid var(--border-color);
+    box-shadow: 0 -2px 10px var(--card-shadow);
   }
+  
+  .header.scrolled {
+    padding: 0.5rem 1rem;
+  }
+
   .nav {
     position: fixed;
-    top: 0;
-    right: -100%;
-    width: 80%;
-    max-width: 300px;
-    height: 100vh;
+    bottom: calc(100% + 1px);
+    left: 0;
+    width: 100%;
+    height: auto;
+    max-height: calc(100vh - 80px);
     background-color: var(--header-bg);
     flex-direction: column;
-    justify-content: flex-start;
-    padding: 5rem 2rem 2rem;
-    gap: 2rem;
-    transition: right 0.3s ease;
+    justify-content: center;
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+    transform: translateY(150%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 -10px 20px rgba(0,0,0,0.1);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
   }
-  .nav.open { right: 0; }
-  .navLinks { flex-direction: column; text-align: center; gap: 1rem; }
+  
+  .nav.open { 
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .menuButton {
+    display: flex;
+    order: 3;
+    padding: 0.5rem;
+  }
+  
+  .languageSelector {
+    order: 1;
+  }
+  
+  .themeButton {
+    order: 2;
+  }
+
+  .socialLinks {
+    justify-content: center;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .navLinks { 
+    flex-direction: column; 
+    text-align: center; 
+    gap: 1.5rem;
+    width: 100%;
+  }
+  
+  .navLink {
+    font-size: 1.25rem;
+  }
+
+  .grid {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .card, .contact {
+    width: 90%;
+    max-width: 100%;
+    margin: 1rem auto;
+  }
+
+  .techGrid {
+    gap: 8px;
+  }
+  
+  .techItem {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
 }
+

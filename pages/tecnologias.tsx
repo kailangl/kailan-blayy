@@ -10,6 +10,35 @@ import {
   SiFirebase, SiSupabase, SiVercel 
 } from "react-icons/si";
 
+const frontendTechs = [
+  { name: "React", Icon: SiReact, url: "https://react.dev/" },
+  { name: "Next.js", Icon: SiNextdotjs, url: "https://nextjs.org/" },
+  { name: "Vite", Icon: SiVite, url: "https://vitejs.dev/" },
+  { name: "Tailwind CSS", Icon: SiTailwindcss, url: "https://tailwindcss.com/" },
+  { name: "UnoCSS", Icon: SiUnocss, url: "https://unocss.dev/" },
+  { name: "HTML5", Icon: SiHtml5, url: "https://developer.mozilla.org/en-US/docs/Glossary/HTML5" },
+  { name: "CSS3", Icon: SiCss3, url: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+];
+
+const languageTechs = [
+  { name: "TypeScript", Icon: SiTypescript, url: "https://www.typescriptlang.org/" },
+  { name: "JavaScript", Icon: SiJavascript, url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+  { name: "Golang", Icon: SiGo, url: "https://go.dev/" },
+  { name: "C++", Icon: SiCplusplus, url: "https://cplusplus.com/" },
+  { name: "Dart", Icon: SiDart, url: "https://dart.dev/" },
+];
+
+const backendTechs = [
+  { name: "Node.js", Icon: SiNodedotjs, url: "https://nodejs.org/" },
+  { name: "Electron", Icon: SiElectron, url: "https://www.electronjs.org/" },
+  { name: "Flutter", Icon: SiFlutter, url: "https://flutter.dev/" },
+  { name: "Firebase", Icon: SiFirebase, url: "https://firebase.google.com/" },
+  { name: "Supabase", Icon: SiSupabase, url: "https://supabase.com/" },
+  { name: "Vercel", Icon: SiVercel, url: "https://vercel.com/" },
+  { name: "Git", Icon: SiGit, url: "https://git-scm.com/" },
+  { name: "GitHub", Icon: SiGithub, url: "https://github.com/" },
+];
+
 const Tecnologias: NextPage = () => {
   return (
     <div className={styles.container}>
@@ -28,34 +57,50 @@ const Tecnologias: NextPage = () => {
           
           <h2 style={{ marginBottom: '1rem', color: 'var(--text-primary)' }}>Frontend & UI</h2>
           <div className={styles.techGrid} style={{ marginBottom: '3rem' }}>
-            <span className={styles.techItem}><SiReact size={14} /> React</span>
-            <span className={styles.techItem}><SiNextdotjs size={14} /> Next.js</span>
-            <span className={styles.techItem}><SiVite size={14} /> Vite</span>
-            <span className={styles.techItem}><SiTailwindcss size={14} /> Tailwind CSS</span>
-            <span className={styles.techItem}><SiUnocss size={14} /> UnoCSS</span>
-            <span className={styles.techItem}><SiHtml5 size={14} /> HTML5</span>
-            <span className={styles.techItem}><SiCss3 size={14} /> CSS3</span>
+            {frontendTechs.map((tech) => (
+              <a 
+                key={tech.name}
+                href={tech.url} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className={styles.techItem} 
+                style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}
+              >
+                <tech.Icon size={14} /> {tech.name}
+              </a>
+            ))}
           </div>
 
           <h2 style={{ marginBottom: '1rem', color: 'var(--text-primary)' }}>Linguagens</h2>
           <div className={styles.techGrid} style={{ marginBottom: '3rem' }}>
-            <span className={styles.techItem}><SiTypescript size={14} /> TypeScript</span>
-            <span className={styles.techItem}><SiJavascript size={14} /> JavaScript</span>
-            <span className={styles.techItem}><SiGo size={14} /> Golang</span>
-            <span className={styles.techItem}><SiCplusplus size={14} /> C++</span>
-            <span className={styles.techItem}><SiDart size={14} /> Dart</span>
+            {languageTechs.map((tech) => (
+              <a 
+                key={tech.name}
+                href={tech.url} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className={styles.techItem} 
+                style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}
+              >
+                <tech.Icon size={14} /> {tech.name}
+              </a>
+            ))}
           </div>
 
           <h2 style={{ marginBottom: '1rem', color: 'var(--text-primary)' }}>Backend & Ferramentas</h2>
           <div className={styles.techGrid} style={{ marginBottom: '3rem' }}>
-            <span className={styles.techItem}><SiNodedotjs size={14} /> Node.js</span>
-            <span className={styles.techItem}><SiElectron size={14} /> Electron</span>
-            <span className={styles.techItem}><SiFlutter size={14} /> Flutter</span>
-            <span className={styles.techItem}><SiFirebase size={14} /> Firebase</span>
-            <span className={styles.techItem}><SiSupabase size={14} /> Supabase</span>
-            <span className={styles.techItem}><SiVercel size={14} /> Vercel</span>
-            <span className={styles.techItem}><SiGit size={14} /> Git</span>
-            <span className={styles.techItem}><SiGithub size={14} /> GitHub</span>
+            {backendTechs.map((tech) => (
+              <a 
+                key={tech.name}
+                href={tech.url} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className={styles.techItem} 
+                style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}
+              >
+                <tech.Icon size={14} /> {tech.name}
+              </a>
+            ))}
           </div>
           
         </div>
