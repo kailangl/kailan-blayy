@@ -10,7 +10,10 @@ import {
   FiUser,
   FiSettings,
   FiMail,
-  FiChevronDown
+  FiChevronDown,
+  FiBook,
+  FiCode,
+  FiCloudSnow
 } from "react-icons/fi";
 import {
   FaDiscord,
@@ -22,15 +25,19 @@ import {
 interface HeadBarProps {
   theme: string;
   language: string;
+  isSnowing: boolean;
   onThemeChange: (theme: string) => void;
   onLanguageChange: (lang: string) => void;
+  onSnowToggle: () => void;
 }
 
 const HeadBar = ({ 
   theme, 
   language, 
+  isSnowing,
   onThemeChange, 
-  onLanguageChange 
+  onLanguageChange,
+  onSnowToggle
 }: HeadBarProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -82,6 +89,8 @@ const HeadBar = ({
   const navItems = [
     { id: "home", path: "/", icon: <FiUser className={styles.navIcon} />, label: "Home" },
     { id: "about", path: "/about", icon: <FiSettings className={styles.navIcon} />, label: "Sobre" },
+    { id: "poesias", path: "/poesias", icon: <FiBook className={styles.navIcon} />, label: "Poesias" },
+    { id: "tecnologias", path: "/tecnologias", icon: <FiCode className={styles.navIcon} />, label: "Tecnologias" },
     { id: "contact", path: "/contact", icon: <FiMail className={styles.navIcon} />, label: "Contato" }
   ];
 
@@ -100,13 +109,11 @@ const HeadBar = ({
         )}
       </button>
 
-      <div className={styles.languageSelector} style={{ display: 'flex' }}>
+      <div className={`${styles.languageSelector} flex`}>
         <select
           value={language}
           onChange={handleLanguageChange}
-          className={styles.select}
-          aria-label="Selecionar idioma"
-          style={{ padding: '0.2rem 1rem 0.2rem 0.5rem', minWidth: 'auto', appearance: 'auto' }}
+          className={`${styles.select} py-1 pr-4 pl-2 min-w-min appearance-auto`}
         >
           {Object.entries(languageOptions).map(([code, {flag, label}]) => (
             <option key={code} value={code}>
@@ -122,12 +129,23 @@ const HeadBar = ({
         aria-label="Alternar tema"
         data-theme={theme}
       >
-        <div className={styles.themeToggle} style={{ margin: 0 }}>
+        <div className={`${styles.themeToggle} m-0`}>
           {theme === "dark" ? (
             <FiMoon className={styles.themeIcon} />
           ) : (
             <FiSun className={styles.themeIcon} />
           )}
+        </div>
+      </button>
+
+      <button
+        onClick={onSnowToggle}
+        className={styles.themeButton}
+        aria-label="Alternar neve"
+        title="Alternar neve"
+      >
+        <div className={`${styles.themeToggle} m-0`}>
+          <FiCloudSnow className={styles.themeIcon} style={{ color: isSnowing ? "var(--accent-blue)" : "var(--icon-color)" }} />
         </div>
       </button>
 

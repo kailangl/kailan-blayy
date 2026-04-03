@@ -64,7 +64,7 @@ const Home: NextPage = () => {
           <span className={styles.techItem}><SiTypescript size={14} /> TypeScript</span>
           <span className={styles.techItem}><SiNodedotjs size={14} /> Node.js</span>
         </div>
-        <div style={{ textAlign: "center", marginTop: "1.5rem" }}>
+        <div className="text-center mt-6">
           <Link href="/tecnologias">
             <button className={styles.button}>
               Ver todas as tecnologias &rarr;

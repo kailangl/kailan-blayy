@@ -47,56 +47,53 @@ const Tecnologias: NextPage = () => {
         <meta name="description" content="Minhas Tecnologias e Habilidades" />
       </Head>
 
-      <main className={styles.main} style={{ padding: '4rem 0', minHeight: '80vh' }}>
-        <h1 className={styles.title} style={{ marginBottom: '2rem' }}>- Tecnologias -</h1>
-        <p className={styles.description} style={{ marginBottom: '3rem' }}>
+      <main className={`${styles.main} py-16 min-h-[80vh]`}>
+        <h1 className={`${styles.title} mb-8`}>- Tecnologias -</h1>
+        <p className={`${styles.description} mb-12`}>
           As ferramentas, linguagens e frameworks que utilizo.
         </p>
 
-        <div style={{ maxWidth: '800px', margin: '0 auto', padding: '0 1rem' }}>
+        <div className="max-w-[800px] mx-auto px-4">
           
-          <h2 style={{ marginBottom: '1rem', color: 'var(--text-primary)' }}>Frontend & UI</h2>
-          <div className={styles.techGrid} style={{ marginBottom: '3rem' }}>
+          <h2 className="mb-4 text-[var(--text-primary)]">Frontend & UI</h2>
+          <div className={`${styles.techGrid} mb-12`}>
             {frontendTechs.map((tech) => (
               <a 
                 key={tech.name}
                 href={tech.url} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className={styles.techItem} 
-                style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}
+                className={`${styles.techItem} no-underline flex items-center gap-2`}
               >
                 <tech.Icon size={14} /> {tech.name}
               </a>
             ))}
           </div>
 
-          <h2 style={{ marginBottom: '1rem', color: 'var(--text-primary)' }}>Linguagens</h2>
-          <div className={styles.techGrid} style={{ marginBottom: '3rem' }}>
+          <h2 className="mb-4 text-[var(--text-primary)]">Linguagens</h2>
+          <div className={`${styles.techGrid} mb-12`}>
             {languageTechs.map((tech) => (
               <a 
                 key={tech.name}
                 href={tech.url} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className={styles.techItem} 
-                style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}
+                className={`${styles.techItem} no-underline flex items-center gap-2`}
               >
                 <tech.Icon size={14} /> {tech.name}
               </a>
             ))}
           </div>
 
-          <h2 style={{ marginBottom: '1rem', color: 'var(--text-primary)' }}>Backend & Ferramentas</h2>
-          <div className={styles.techGrid} style={{ marginBottom: '3rem' }}>
+          <h2 className="mb-4 text-[var(--text-primary)]">Backend & Ferramentas</h2>
+          <div className={`${styles.techGrid} mb-12`}>
             {backendTechs.map((tech) => (
               <a 
                 key={tech.name}
                 href={tech.url} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className={styles.techItem} 
-                style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}
+                className={`${styles.techItem} no-underline flex items-center gap-2`}
               >
                 <tech.Icon size={14} /> {tech.name}
               </a>

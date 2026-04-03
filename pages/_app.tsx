@@ -3,6 +3,12 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { AppProvider } from '../contexts/AppContext';
 import Layout from '../components/Layout';
+import { Dancing_Script } from 'next/font/google';
+
+const dancingScript = Dancing_Script({
+  subsets: ['latin'],
+  variable: '--font-calligraphy',
+});
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -14,7 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <div className="min-h-screen bg-gray-50">
+        <div className={`min-h-screen bg-gray-50 ${dancingScript.variable}`}>
           <Component {...pageProps} />
         </div>
       </Layout>

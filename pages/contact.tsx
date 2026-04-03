@@ -7,11 +7,11 @@ function Contact() {
   const themeClass = theme === "dark" ? styles.darkTheme : styles.lightTheme;
 
   return (
-    <div className={`${styles.main} ${themeClass}`} style={{ minHeight: '80vh', padding: '2rem' }}>
+    <div className={`${styles.main} ${themeClass} min-h-[80vh] p-8`}>
       <Head>
         <title>Contato - Blayy Dev</title>
       </Head>
-      <div style={{ textAlign: "center" }}>
+      <div className="text-center">
         <h1>Contato</h1>
         <p>Formulário de contato em construção.</p>
       </div>

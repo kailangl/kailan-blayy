@@ -3,32 +3,31 @@
 @tailwind utilities;
 
 :root {
-  /* Globais - Light Theme */
   --bg-color: #ffffff;
   --bg-radial: #ccc;
   --text-primary: #333333;
   --text-secondary: #bcbcbc;
-  
+
   --anim-color-1: rgba(174, 189, 254, 0.15);
   --anim-color-2: rgba(184, 137, 228, 0.1);
   --scanline-color: rgba(255, 255, 255, 0.8);
-  
+
   --accent-purple: #b889e4;
   --accent-blue: #aebdfe;
   --accent-orange: #ff5500;
-  
+
   --button-bg: #fff;
   --button-border: #aebdfe;
   --button-hover-color: #b889e4;
-  
+
   --card-bg: #fff;
   --card-shadow: rgba(0, 0, 0, 0.1);
   --card-hover-bg: rgba(174, 189, 254, 0.1);
   --card-hover-shadow: rgba(174, 189, 254, 0.2);
-  
+
   --header-bg: rgba(255, 255, 255, 1);
   --header-scroll: rgba(255, 255, 255, 0.5);
-  
+
   --nav-link-color: #333;
   --icon-color: #666;
   --input-bg: #fff;
@@ -36,32 +35,31 @@
 }
 
 [data-theme="dark"] {
-  /* Globais - Dark Theme */
   --bg-color: #0f0f0f;
   --bg-radial: #1d1b1b;
   --text-primary: #ffffff;
   --text-secondary: #bcbcbc;
-  
+
   --anim-color-1: rgba(184, 137, 228, 0.1);
   --anim-color-2: rgba(174, 189, 254, 0.1);
   --scanline-color: rgba(184, 137, 228, 0.03);
-  
+
   --accent-purple: #b889e4;
   --accent-blue: #aebdfe;
   --accent-orange: #ff5500;
-  
+
   --button-bg: #000;
   --button-border: #aebdfe;
   --button-hover-color: #b889e4;
-  
+
   --card-bg: #1a1a1a;
   --card-shadow: rgba(0, 0, 0, 0.3);
   --card-hover-bg: rgba(184, 137, 228, 0.1);
   --card-hover-shadow: rgba(174, 189, 254, 0.2);
-  
+
   --header-bg: rgba(15, 15, 15, 1);
   --header-scroll: rgba(15, 15, 15, 0.5);
-  
+
   --nav-link-color: #fff;
   --icon-color: #aaa;
   --input-bg: #222;
@@ -76,4 +74,14 @@ html {
   background-color: var(--bg-color);
   color: var(--text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-calligraphy), cursive;
+  font-weight: 700;
 }

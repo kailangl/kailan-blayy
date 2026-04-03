@@ -296,7 +296,7 @@
 
 /* Navigation & Header elements */
 .nav { display: flex; align-items: center; gap: 1.5rem; }
-.navLinks { display: flex; gap: 1.5rem; justify-content: center; width: 100%; }
+.navLinks { display: flex; gap: 1.5rem; justify-content: center; width: 100%; flex-wrap: wrap; }
 
 .navLink {
   color: var(--nav-link-color);
@@ -415,12 +415,13 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .header {
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1rem;
     justify-content: space-between;
-    bottom: 0;
-    top: auto;
-    border-top: 1px solid var(--border-color);
-    box-shadow: 0 -2px 10px var(--card-shadow);
+    top: 0;
+    bottom: auto;
+    border-bottom: 1px solid var(--input-border);
+    border-top: none;
+    box-shadow: 0 2px 10px var(--card-shadow);
   }
   
   .header.scrolled {
@@ -428,24 +429,27 @@
   }
 
   .nav {
-    position: fixed;
-    bottom: calc(100% + 1px);
+    position: absolute;
+    top: 100%;
     left: 0;
     width: 100%;
     height: auto;
     max-height: calc(100vh - 80px);
+    overflow-y: auto;
     background-color: var(--header-bg);
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 2rem 1rem;
     gap: 1.5rem;
-    transform: translateY(150%);
+    transform: translateY(-20px);
     opacity: 0;
     visibility: hidden;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 -10px 20px rgba(0,0,0,0.1);
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px var(--card-shadow);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
   }
   
   .nav.open { 
