@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import styles from "../styles/Home.module.css";
@@ -41,7 +41,9 @@ const HeadBar = ({
 }: HeadBarProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const lastScrollY = useRef(0);
   const router = useRouter();
 
   useEffect(() => {
@@ -50,19 +52,28 @@ const HeadBar = ({
   }, [router.asPath]);
 
   useEffect(() => {
-    if (router.pathname !== '/') return;
-
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      const currentScrollY = window.scrollY;
+      setIsScrolled(currentScrollY > 10);
       
-      const sections = ['about', 'services', 'contact'];
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= 100 && rect.bottom >= 100) {
-            setActiveSection(section);
-            break;
+      // Ocultar ao descer, mostrar ao subir (evita ocultar se o menu mobile estiver aberto)
+      if (currentScrollY > lastScrollY.current && currentScrollY > 80 && !isMenuOpen) {
+        setIsHidden(true);
+      } else {
+        setIsHidden(false);
+      }
+      lastScrollY.current = currentScrollY;
+
+      if (router.pathname === '/') {
+        const sections = ['about', 'services', 'contact'];
+        for (const section of sections) {
+          const element = document.getElementById(section);
+          if (element) {
+            const rect = element.getBoundingClientRect();
+            if (rect.top <= 100 && rect.bottom >= 100) {
+              setActiveSection(section);
+              break;
+            }
           }
         }
       }
@@ -70,7 +81,7 @@ const HeadBar = ({
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [router.pathname]);
+  }, [router.pathname, isMenuOpen]);
 
   const toggleTheme = () => {
     onThemeChange(theme === "light" ? "dark" : "light");
@@ -95,7 +106,7 @@ const HeadBar = ({
   ];
 
   return (
-    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ""}`}>
+    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ""} ${isHidden ? styles.hidden : ""}`}>
 
       <button 
         className={styles.menuButton}

@@ -284,6 +284,10 @@
   background-color: var(--header-scroll);
 }
 
+.header.hidden {
+  transform: translateY(-100%);
+}
+
 .logoText {
   font-weight: 700;
   font-size: 1.25rem;

@@ -22,7 +22,8 @@ const Snowflakes = () => {
       const size = Math.random() * 1.5 + 0.5; // 0.5rem to 2rem
       const opacity = Math.random() * 0.6 + 0.4;
       
-      const content = ["❄", "❅", "❆"][Math.floor(Math.random() * 3)];
+      // O \uFE0E força o navegador a renderizar o símbolo como texto e não como emoji colorido
+      const content = ["❄\uFE0E", "❅\uFE0E", "❆\uFE0E"][Math.floor(Math.random() * 3)];
 
       return {
         id: i,
